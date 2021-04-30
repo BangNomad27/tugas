@@ -1,13 +1,224 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* ================ GLOBAL CSS ================ */
+/* ! CSS Reset */
+:root {
+  --color: #ff4747;
+  --borderRadius: 1rem;
+}
+* {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  font-family: arial, verdana, sans-serif;
+  font-weight: lighter;
+}
+html {
+  font-size: 67.5%;
+  scroll-behavior: smooth;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* ! Navbar */
+.navbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+/* * Navbar Left */
+.navbar-left {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.navbar-left .logos {
+  text-transform: uppercase;
+  color: var(--color);
+  font-weight: 600;
+  font-size: 1.7rem;
+}
+.navbar-left .icon {
+  border: .2rem solid var(--color);
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: .2rem;
+  cursor: pointer;
+}
+.navbar-left .icon .bx {
+  color: var(--color);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.navbar-left .title {
+  font-weight: 600;
+  font-size: 1.7rem;
+  color: #333;
+}
+/* * Navbar Right */
+.navbar-right .newBx {
+  position: relative;
+  border: .1rem solid var(--color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color);
+  padding: 1rem;
+  cursor: pointer;
+}
+.navbar-right .newBx .news {
+  text-transform: uppercase;
+}
+
+/* ! Side Lane */
+.container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  padding: 0 2rem;
+}
+/* * Side Left */
+.side-left {
+  min-width: 50%;
+  padding-right: 2rem;
+}
+.headBx {
+  display: flex;
+  justify-content: space-between;
+}
+.head-title {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+.head-title:not(:first-child) {
+  margin-top: 1.2rem;
+}
+.head-title::after {
+  content: '';
+  display: block;
+  width: 40%;
+  border-bottom: .3rem solid var(--color);
+  padding-bottom: 0.5rem;
+}
+.head-title.border::after {
+  content: '';
+  display: block;
+  width: 5%;
+}
+.headBx span {
+  font-weight: 700;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.box {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-top: .7rem;
+}
+.box .imgBx {
+  position: relative;
+  margin-right: 1rem;
+}
+.box .imgBx img {
+  width: 20rem;
+  height: 15rem;
+  object-fit: cover;
+}
+.txtBx h4 {
+  font-weight: 700;
+  font-size: 1.46rem;
+}
+.txtBx .dateBx {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.3em 0;
+}
+.txtBx .dateBx :is(.date-left, .date-right) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.txtBx .dateBx .bx {
+  margin-right: 0.3rem;
+}
+.txtBx p {
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+ul li {
+  margin-top: 1rem;
+  margin-left: 1.2rem;
+  font-size: 1.2rem;
+  line-height: 1rem;
+}
+.issueBx {
+  position: relative;
+  display: flex;
+  flex-flow: wrap;
+}
+.issueBx p {
+  color: #fff;
+  background: var(--color);
+  margin-top: .7rem;
+  margin-right: 1rem;
+  padding: 1rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+}
+.issueBx p:hover {
+  background: rgba(247,41,41,1);
+}
+/* * Side Right */
+.side-right {
+  min-width: 47%;
+}
+div[data-select] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+div[data-select] .bx {
+  font-size: 1.5rem;
+}
+div[data-select] select {
+  background: transparent;
+  margin-right: 2rem;
+  margin-left: 1.5rem;
+  padding: .5rem;
+  padding-right: 2.5rem;
+  outline: none;
+  cursor: pointer;
+}
+.chart {
+  width: 530px;
+}
+aside .row {
+  display: flex;
+  /* flex-flow: wrap; */
+  justify-content: space-around;
+  margin-top: .5rem;
+}
+.col {
+  cursor: pointer;
+}
+.col .thumb img {
+  width: 13rem;
+  height: 11rem;
+  object-fit: cover;
+}
+.col {
+  position: relative;
+  width: 100%;
+}
+.col .text {
+  position: absolute;
+  bottom: 0; left: 0;
+  padding: .47rem;
+  background: #111;
+}
+.col .text p {
+  color: #fff; 
+  font-size: 1.2rem;
 }
